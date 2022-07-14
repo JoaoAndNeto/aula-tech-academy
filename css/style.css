@@ -25,7 +25,7 @@ header .container{
     align-items: center;
     justify-content: space-between;
     max-width: 980px;
-    height: 80px;
+    height: 60px;
     margin: auto;
 }
 
@@ -52,6 +52,10 @@ header nav ul li a:hover {
 
 header .container img{
     height: 30px;
+}
+
+#checkbox-menu{
+    display: none;
 }
 
 /* MAIN */
