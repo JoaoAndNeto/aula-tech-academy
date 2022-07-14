@@ -30,22 +30,48 @@
     }
 }
 @media (max-width: 630px) {
-    nav {
-        display: none;
-    }
-    main .container-menu img{
-        display: none;
-    }
-    .container-menu{
-        height: 100%;
-        display:flex;
-        align-items: center;
-        justify-content: center;
+
+    .menu-button-container{
+        display: flex;
     }
 
-    #checkbox-menu {
-        position: absolute;
-        opacity: 0;
+    .menu {
+        position:absolute;
+        margin-top: 30px;
+        flex-direction: column;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        left: 100%;
+        transform: translateX(100vw);
+        /*Esse vw acima é viewport. Refere-se à largura da view port*/
+        transition: 0.5s ease transform;
+    }
+
+    .menu>li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0px;
+        width: 100%;
+        color: white;
+        background-color: #0080ed;
+        border-radius: 5px;
+    }
+
+    .menu>li:not(:last-child){
+        border-bottom: 1px solid white;
+        /*Aqui a gente colocou uma bordinha branca inferior nos lis da ul 'menu', com exceção da última li, pois abaixo dela já vem o conteúdo da página*/
+    }
+
+    .menu li a {
+        flex: 1;
+        text-align: center;
+        /*Pra conseguirmos clicar em qualquer lugar da área do botão quando estiver no formato mobile*/
+    }
+
+    main .container-menu img{
+        display: none;
     }
 
     label{
@@ -86,6 +112,16 @@
     #checkbox-menu:checked + label span:nth-child(3){
         transform: rotate(45deg);
         top: 8px
+    }
+
+    nav.menu {
+        width: 100%;
+    }
+
+    #checkbox-menu:checked~nav .menu {
+        /*QUando clicar na checkbox eu quero que altere meu nav .menu*/
+        transform: translateX(-100vw);
+        transition: 0.5s ease transform;
     }
 
   
